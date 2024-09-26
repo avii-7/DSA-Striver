@@ -26,3 +26,28 @@ func getPascalValue(row: Int, col: Int) -> Int {
 }
 
 print("Value: \(getPascalValue(row: 5, col: 4))")
+
+// Version 2:
+// Given the row number n. Print the n-th row of Pascal’s triangle.
+
+// TC -> O(row)
+
+func getNthRow(row: Int) -> [Int] {
+    var resultArray = [1]
+    var result = 1
+    
+    for i in 1..<row {
+        result = result * (row - i)
+        result = result / i
+        resultArray.append(result)
+    }
+
+    return resultArray
+}
+
+let row = 10
+print("\(row) row: \(getNthRow(row: row))")
+
+
+// Version 3:
+
