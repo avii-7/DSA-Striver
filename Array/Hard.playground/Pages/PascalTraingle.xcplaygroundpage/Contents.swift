@@ -45,9 +45,50 @@ func getNthRow(row: Int) -> [Int] {
     return resultArray
 }
 
-let row = 10
+let row = 1
 print("\(row) row: \(getNthRow(row: row))")
 
 
 // Version 3:
+//a. Given the number of rows n. Print the first n rows of Pascal’s triangle.
 
+//TC -> O(rows * rows)
+
+func getPascalTraingle1(rows: Int) -> [[Int]] {
+    var result = [[Int]]()
+    
+    for i in 1...rows {
+        result.append(getNthRow(row: i))
+    }
+    
+    return result
+}
+
+let rows = 6
+print(getPascalTraingle1(rows: rows))
+
+//b. Given the number of rows n. Print the first n rows of Pascal’s triangle.
+
+// TC -> O(rows * (rows/2))
+
+// Explanation: Use the question statement, a row is derive from previous row.
+// and after half of the columns we are just repeating those elements.
+
+func getPascalTraingle2(rows: Int) -> [[Int]] {
+    var result = [[1]]
+    result.reserveCapacity(rows)
+    
+    for i in 1..<rows {
+        var row = Array(repeating: 1, count: i + 1)
+        for j in stride(from: 1, to: result.count/2 + 1, by: 1) {
+            row[j] = result[i - 1][j - 1] + result[i - 1][j]
+            row[row.count - 1 - j] = row[j]
+        }
+        
+        result.append(row)
+    }
+    
+    return result
+}
+
+print(getPascalTraingle2(rows: 6))
