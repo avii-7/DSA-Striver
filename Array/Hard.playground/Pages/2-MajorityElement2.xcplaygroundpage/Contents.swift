@@ -87,19 +87,20 @@ func majorityElement_OA(_ nums: [Int]) -> [Int] {
     var ele1 = Int.min, ele2 = Int.min
     
     for num in nums {
-        if count1 == 0 && num != ele2 {
-            count1 = 1
-            ele1 = num
-        }
-        else if count2 == 0 && num != ele1 {
-            count2 = 1
-            ele2 = num
-        }
-        else if ele1 == num {
+        
+        if ele1 == num {
             count1 += 1
         }
         else if ele2 == num {
             count2 += 1
+        }
+        else if count1 == 0 {
+            count1 = 1
+            ele1 = num
+        }
+        else if count2 == 0 {
+            count2 = 1
+            ele2 = num
         }
         else {
             count1 -= 1
@@ -133,4 +134,4 @@ func majorityElement_OA(_ nums: [Int]) -> [Int] {
     return result
 }
 
-print(majorityElement_OA([1, 2]))
+print(majorityElement_OA([3, 2, 3]))
