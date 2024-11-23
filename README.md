@@ -1,1 +1,1 @@
-Practising DSA from Striver DSA Series.
+Practising A2Z DSA Sheet by Striver.
