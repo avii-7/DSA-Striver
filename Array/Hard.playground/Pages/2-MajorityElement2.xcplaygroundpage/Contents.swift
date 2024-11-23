@@ -5,6 +5,7 @@ import Foundation
 
 // 229. Majority Element II
 // https://leetcode.com/problems/majority-element-ii/description/
+// Article: https://takeuforward.org/data-structure/majority-elementsn-3-times-find-the-elements-that-appears-more-than-n-3-times-in-the-array/
 
 // BFA
 
