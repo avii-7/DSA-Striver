@@ -1,11 +1,3 @@
-//: [Previous](@previous)
-
-import Foundation
-
-var greeting = "Hello, playground"
-
-//: [Next](@next)
-
 func mergeSort(arr: inout [Int]) {
     divide(arr: &arr, low: 0, high: arr.count - 1)
 }
