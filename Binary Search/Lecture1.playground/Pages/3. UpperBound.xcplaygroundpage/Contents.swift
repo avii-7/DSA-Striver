@@ -36,4 +36,4 @@ func upperBound(arr: [Int], k: Int) -> Int {
 
 let arr = [1, 2, 8, 10, 11, 12, 19]
 let k = 12
-print(findFloor(arr: arr, k: k))
+print(upperBound(arr: arr, k: k))

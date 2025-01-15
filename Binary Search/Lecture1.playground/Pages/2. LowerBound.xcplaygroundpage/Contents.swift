@@ -1,5 +1,5 @@
 // Problem: https://www.naukri.com/code360/problems/lower-bound_8165382
-// Lower Bound: smallest Index but arr[Idx] >= x
+// Lower Bound: smallest Index but x <= arr[Idx]
 
 // TC -> O(n)
 func lowerBound(arr: [Int], n: Int, x: Int) -> Int {
@@ -36,4 +36,4 @@ func lowerBound(arr: [Int], k: Int) -> Int {
 
 let arr = [1, 2, 8, 10, 11, 12, 19]
 let k = 12
-print(findFloor(arr: arr, k: k))
+print(lowerBound(arr: arr, k: k))
