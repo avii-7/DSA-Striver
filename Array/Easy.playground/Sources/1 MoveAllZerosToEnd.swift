@@ -1,3 +1,10 @@
+//
+//  1 MoveAllZerosToEnd.swift
+//  
+//
+//  Created by Arun on 04/03/25.
+//
+
 // LC: -> https://leetcode.com/problems/move-zeroes/
 // Article: -> https://takeuforward.org/data-structure/move-all-zeros-to-the-end-of-the-array/
 
@@ -57,9 +64,3 @@ func moveZeroesOptimal(_ nums: inout [Int]) {
     }
 }
 
-//var arr = [0, 1, 0, 3, 12]
-//var arr = [0, 1, 0, 3, 12, 5, 6, 7, 0, 0, 1]
-var arr = [0, 0, 0, 1, 2, 3]
-moveZeroesOptimal(&arr)
-
-print(arr)
