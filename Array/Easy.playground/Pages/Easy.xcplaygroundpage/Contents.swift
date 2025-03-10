@@ -15,3 +15,8 @@ var mergeSortArr1 = [1, 2, 4, 11, 5]
 var mergeSortArr2 = [10, 8, 7, 1 ,6, 5, 8, 2]
 mergeSort(arr: &mergeSortArr2)
 print("MERGE SORT: - ", mergeSortArr2)
+
+let a = [1, 2, 3, 4, 6]
+let b = [2, 3, 5]
+let result = union(arr1: a, arr2: b)
+print(result)

@@ -1,32 +1,32 @@
 // Article: https://takeuforward.org/data-structure/search-element-in-a-rotated-sorted-array/
 // LC: https://leetcode.com/problems/search-in-rotated-sorted-array
 
+
+// It will fail when array contains duplicate elements and our condition for checking which part is sorted will fail. For Example: - [1, 0, 1, 1, 1]
+
 // O(LogN)
-func search(_ nums: [Int], _ target: Int) -> Int {
-    var low = 0, high = nums.count - 1
+func search(_ arr: [Int], _ target: Int) -> Int {
+    var low = 0, high = arr.count - 1
     
     while low <= high {
         let mid = (low + high) / 2
         
-        print(low, high, separator: " ")
-        
-        if target == nums[mid] {
+        if arr[mid] == target {
             return mid
         }
         // Check is left part sorted or not ?
-        else if nums[low] <= nums[mid] {
+        else if arr[low] <= arr[mid] {
             
-            // Check target is in b/w left sorted array
-            if nums[low] <= target && target <= nums[mid] {
+            if arr[low] <= target && target < arr[mid] {
                 high = mid - 1
             }
             else {
                 low = mid + 1
             }
         }
-        else { // right part is sorted or not
+        else { // is right part sorted or not ?
             
-            if nums[mid] <= target && target <= nums[high] {
+            if arr[mid] < target && target <= arr[high] {
                 low = mid + 1
             }
             else {

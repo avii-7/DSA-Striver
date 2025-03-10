@@ -51,13 +51,7 @@ func majorityElement2(_ nums: [Int]) -> [Int] {
     var dict = Dictionary<Int, Int>()
     
     for ele in nums {
-        
-        if let value = dict[ele] {
-            dict[ele] = value + 1
-        }
-        else {
-            dict[ele] = 1
-        }
+        dict[ele, default: 0] += 1
     }
     
     let requiredFreq = nums.count / 3
