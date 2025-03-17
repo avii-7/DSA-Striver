@@ -1,5 +1,6 @@
 //: [Previous](@previous)
 
+// LeetCode: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 
 // Notes 🗒️: In a rotated sorted array the element which will be minimum at an index k and element at index k + 1  and k -1 will always be greater.
 // My personal solution based on observation.
@@ -37,6 +38,37 @@ func findMin(_ arr: [Int]) -> Int {
     return -1
 }
 
+func findMin2(_ arr: [Int]) -> Int {
+    
+    var minValue = Int.max
+    
+    var low = 0, high = arr.count - 1
+    
+    while low <= high {
+        
+        let mid = (low + high) / 2
+        
+        // If we reach a position where the array is sorted between low and high,
+        // we have already crossed the rotation point, so further binary search is unnecessary.
+        if arr[low] <= arr[high] {
+            minValue = min(arr[low], minValue)
+            break
+        }
+        
+        // Is right part sorted ?
+        if arr[mid] <= arr[high] {
+            minValue = min(arr[mid], minValue)
+            high = mid - 1
+        }
+        else {
+            minValue = min(arr[low], minValue)
+            low = mid + 1
+        }
+    }
+    
+    return minValue
+}
+
 let testCases = [
     [3, 4, 5, 1, 2], // 5
     [4, 5, 6, 7, 0, 1, 2], // 7
@@ -49,5 +81,5 @@ let testCases = [
     [4, 5, 0, 1, 2, 3], // 5
 ]
 for testCase in testCases {
-    print(testCase, findMin(testCase), separator: " --> ")
+    print(testCase, findMin2(testCase), separator: " --> ")
 }
