@@ -1,6 +1,7 @@
 //: [Previous](@previous)
 
 // LeetCode: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
+// Article: https://takeuforward.org/data-structure/minimum-in-rotated-sorted-array/
 
 // Notes 🗒️: In a rotated sorted array the element which will be minimum at an index k and element at index k + 1  and k -1 will always be greater.
 // My personal solution based on observation.

@@ -2,6 +2,7 @@
 
 
 // LC:- https://leetcode.com/problems/single-element-in-a-sorted-array/
+// Article: https://takeuforward.org/data-structure/search-single-element-in-a-sorted-array/
 
 import Foundation
 
