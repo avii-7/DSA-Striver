@@ -27,17 +27,31 @@ func findPeakElement1(_ arr: [Int]) -> Int {
     return -1
 }
 
+
+/*
+ [1, 2, 3, 4, 5, 6, 7, 8, 6, 1]
+ 
+       Peak
+        /\
+       /  \
+      /
+     / <- Mid ( Just go to direction of PEAK )
+    /
+   /
+  /
+ /
+ 
+ */
+
 // TC -> O(logN)
 
-// Observation: If you are at mid, go to that direction where adjacent element is greater. It might happen both directions adjacent elements is greater than your mid.
+// Observation: If you are at mid, go to that direction where adjacent element is greater. It will take you to the peak element.
+// It might happen, there will be multiple peaks.
+
 func findPeakElement2(_ arr: [Int]) -> Int {
     
     if arr.count == 1 {
         return 0
-    }
-    
-    if arr.count == 2 {
-        return arr[0] > arr[1] ? 0 : 1
     }
     
     if arr[0] > arr[1] {
