@@ -6,7 +6,7 @@
 //
 
 // TC -> O(sqrt(N))
-public func sqrtN(n: Int) -> Int {
+public func sqrtN(_ n: Int) -> Int {
     var num = 0
     
     while num * num <= n {
@@ -20,7 +20,7 @@ public func sqrtN(n: Int) -> Int {
 }
 
 // TC -> O(logN/2)
-public func sqrtN2(n: Int) -> Int {
+public func sqrtN2(_ n: Int) -> Int {
     
     if n <= 1 {
         return n
