@@ -16,4 +16,13 @@ let testCases2 = [
     (3, 27), (4, 69), (3, 64), (1, 14), (3, 9), (8, 256)
 ]
 
-execute(testCases: testCases2, solver: NthRoot2)
+//execute(testCases: testCases2, solver: NthRoot2)
+
+let testCases3 = [
+    ([3,6,7,11], 8),
+    ([30,11,23,4,20], 5),
+    ([30,11,23,4,20], 6),
+    ([5], 4)
+]
+
+execute(testCases: testCases3, solver: minEatingSpeed2)
