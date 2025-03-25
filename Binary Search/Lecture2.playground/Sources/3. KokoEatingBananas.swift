@@ -11,19 +11,6 @@
 
 import Foundation
 
-func findMax(arr: [Int]) -> Int {
-    
-    var maxi = Int.min
-    
-    for ele in arr {
-        if ele > maxi {
-            maxi = ele
-        }
-    }
-    
-    return maxi
-}
-
 func calculateHours(_ arr: [Int], _ speed: Int) -> Int {
     
     var tempHour = 0
