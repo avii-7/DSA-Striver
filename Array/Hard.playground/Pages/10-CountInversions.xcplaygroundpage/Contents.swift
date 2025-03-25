@@ -54,8 +54,8 @@ func combine(arr: inout [Int], low: Int, mid: Int, high: Int) -> Int {
     
     while(left <= mid && right <= high) {
         
-        // Please take care, in this problem it is always (<=) because inversion condition is
-        // arr[i] > arr[j] and i < j. But in merge sort you can consider any one either < or <=.
+        // Please take care here, else condition should only run when arr[i] > arr[j]
+        // even not on when arr[i] >= arr[j
         if arr[left] <= arr[right] {
             temp.append(arr[left])
             left += 1
