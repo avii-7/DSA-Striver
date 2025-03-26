@@ -46,37 +46,36 @@ func mergeBrute(_ intervals: [[Int]]) -> [[Int]] {
 
 // TC -> O(nlogn) + O(n)
 // SC -> O(n)
-func mergeOptimal(_ intervals: [[Int]]) -> [[Int]] {
-    var i = 0
+public func mergeOptimal(_ unsortedIntervals: [[Int]]) -> [[Int]] {
     
-    var sortedIntervals = intervals.sorted {
+    let intervals = unsortedIntervals.sorted {
         if $0[0] == $1[0] {
             return $0[1] < $1[1]
         }
+        return $0[0] < $1[0]
+    }
+    
+    var result = [intervals.first!]
+    
+    for i in 1...(intervals.count - 1) {
+        
+        let interval = intervals[i]
+        // Intersect
+        if result.last![1] >= interval[0] && result.last![1] <= interval[1] {
+            result[result.count - 1][1] = interval[1]
+        }
+        // In-between
+        else if result.last![0] <= interval[0] && result.last![1] >= interval[1] {
+            // No need to do anything
+        }
         else {
-            return $0[0] < $1[0]
+            result.append(interval)
         }
     }
     
-    var arr = [[Int]]()
-    
-    var tba = sortedIntervals[0]
-    
-    for i in 1..<sortedIntervals.count {
-        if tba[1] >= sortedIntervals[i][0] {
-            if tba[1] <= sortedIntervals[i][1] {
-                tba[1] = sortedIntervals[i][1]
-            }
-        }
-        else {
-            arr.append(tba)
-            tba = sortedIntervals[i]
-        }
-    }
-    
-    arr.append(tba)
-    return arr
+    return result
 }
+
 
 print(mergeOptimal([[1,4],[2,3]]))
 print(mergeOptimal([[1,3],[2,6],[8,10],[15,18]]))
