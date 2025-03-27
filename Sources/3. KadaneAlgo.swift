@@ -1,3 +1,10 @@
+//
+//  3. KadaneAlgo.swift
+//  
+//
+//  Created by Arun on 27/03/25.
+//
+
 // Kadane's Algorithm : Maximum Subarray Sum in an Array ( LC: 53. Maximum Subarray )
 
 // Problem Link: https://leetcode.com/problems/maximum-subarray/description/

@@ -1,10 +1,15 @@
-//: [Previous](@previous)
+//
+//  1. 2Sum.swift
+//  
+//
+//  Created by Arun on 27/03/25.
+//
 
 // BFA
 
 // TC -> O(n * n)
 
-func twoSumBrute(_ nums: [Int], _ target: Int) -> [Int] {
+public func twoSumBrute(_ nums: [Int], _ target: Int) -> [Int] {
     
     for i in nums.indices {
         for j in i+1..<nums.count {
@@ -17,13 +22,13 @@ func twoSumBrute(_ nums: [Int], _ target: Int) -> [Int] {
     return []
 }
 
-print(twoSumBrute([2, 7, 11, 15], 9))
+//print(twoSumBrute([2, 7, 11, 15], 9))
 
 
 // TC -> O(n)
 // SC -> O(n)
 
-func twoSumBest(_ nums: [Int], _ target: Int) -> [Int] {
+public func twoSumBest(_ nums: [Int], _ target: Int) -> [Int] {
     
     var dict = Dictionary<Int, Int>()
     
@@ -39,4 +44,4 @@ func twoSumBest(_ nums: [Int], _ target: Int) -> [Int] {
     return []
 }
 
-print(twoSumBest([2, 7, 11, 15], 9))
+//print(twoSumBest([2, 7, 11, 15], 9))

@@ -1,8 +1,13 @@
-//: [Previous](@previous)
+//
+//  2. SubarraySumEqualToK.swift
+//  
+//
+//  Created by Arun on 27/03/25.
+//
 
 // Problem Link: https://leetcode.com/problems/subarray-sum-equals-k/description/
 
-func subarraySumBrute(_ nums: [Int], _ k: Int) -> Int {
+public func subarraySumBrute(_ nums: [Int], _ k: Int) -> Int {
     var count = 0
     
     for i in nums.indices {
@@ -27,11 +32,11 @@ func subarraySumBrute(_ nums: [Int], _ k: Int) -> Int {
 //let arr = [1, 2, 3]
 //let k = 3
 
-let arr = [1, 2, 3, -5, 3, 1, 0, 0, 4]
-let k = 4
-print(subarraySumBrute(arr, k))
+//let arr = [1, 2, 3, -5, 3, 1, 0, 0, 4]
+//let k = 4
+//print(subarraySumBrute(arr, k))
 
-func subarraySumBest(_ nums: [Int], _ k: Int) -> Int {
+public func subarraySumBest(_ nums: [Int], _ k: Int) -> Int {
     var count = 0, sum = 0
     var myDictionary = [Int: Int]()
     myDictionary[0] = 1
@@ -40,7 +45,7 @@ func subarraySumBest(_ nums: [Int], _ k: Int) -> Int {
         sum += ele
         
         if let value = myDictionary[sum - k] {
-            count += value            
+            count += value
         }
         
         if let value = myDictionary[sum] {
@@ -62,5 +67,5 @@ func subarraySumBest(_ nums: [Int], _ k: Int) -> Int {
 
 //let arr = [1, 2, 3, -5, 3, 1, 0, 0, 4]
 //let k = 4
-print()
-print(subarraySumBest(arr, k))
+//print()
+//print(subarraySumBest(arr, k))

@@ -1,8 +1,9 @@
-//: [Previous](@previous)
-
-import Foundation
-
-var greeting = "Hello, playground"
+//
+//  4. MajorityElement.swift
+//  
+//
+//  Created by Arun on 27/03/25.
+//
 
 // Optimal Solution
 // TC -> O(n)
