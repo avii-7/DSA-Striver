@@ -5,6 +5,16 @@
 //  Created by Arun on 25/03/25.
 //
 
+let separator = " ➡️ "
+
+public func execute<T, R: Equatable>(inputs: [T], expectedOutputs: [R], for problem: (T) -> R) {
+    for i in inputs.indices {
+        let output = problem(inputs[i])
+        print(inputs[i], output, separator: separator, terminator: " .... ")
+        print(output == expectedOutputs[i] ? "✅" : "❌")
+    }
+}
+
 
 public func findMax(arr: [Int]) -> Int {
     
@@ -36,3 +46,4 @@ public func findSmallAndMax(arr: [Int]) -> (small: Int, max: Int) {
     
     return (small, maxi)
 }
+
