@@ -11,7 +11,7 @@ public func execute<T, R: Equatable>(inputs: [T], expectedOutputs: [R], for prob
     for i in inputs.indices {
         let output = problem(inputs[i])
         print(inputs[i], output, separator: separator, terminator: " .... ")
-        print(output == expectedOutputs[i] ? "✅" : "❌")
+        print(output == expectedOutputs[i] ? "✅" : "❌ ...... Expected: \( expectedOutputs[i])")
     }
 }
 
@@ -47,3 +47,6 @@ public func findSmallAndMax(arr: [Int]) -> (small: Int, max: Int) {
     return (small, maxi)
 }
 
+public func calculateSum(_ arr: [Int]) -> Int {
+    arr.reduce(0, +)
+}

@@ -38,11 +38,20 @@ let testCases3 = [
 
 // MARK: - 1283. Find the Smallest Divisor Given a Threshold
 
+//execute(
+//    inputs: [
+//        ([1,2,5,9], 6),
+//        ([44,22,33,11,1], 5),
+//        ([200,100,14], 10)
+//    ],
+//    expectedOutputs: [5, 44, 34],
+//    for: smallestDivisor2)
+
 execute(
     inputs: [
-        ([1,2,5,9], 6),
-        ([44,22,33,11,1], 5),
-        ([200,100,14], 10)
+        ([1,2,3,4,5,6,7,8,9,10], 5),
+        ([3,2,2,4,1,4], 3),
+        ([1,2,3,1,1], 4)
     ],
-    expectedOutputs: [5, 44, 34],
-    for: smallestDivisor2)
+    expectedOutputs: [15, 6, 3],
+    for: shipWithinDays1)
