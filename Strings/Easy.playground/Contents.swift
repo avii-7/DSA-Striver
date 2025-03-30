@@ -23,3 +23,19 @@ import Foundation
 //    ],
 //    for: reverseWords
 //)
+
+execute(
+    inputs: [
+        "52",
+        "4206",
+        "35427",
+        "239537672423884969653287101"
+    ],
+    expectedOutputs: [
+        "5",
+        "",
+        "35427",
+        "239537672423884969653287101"
+    ],
+    for: largestOddNumber1
+)
