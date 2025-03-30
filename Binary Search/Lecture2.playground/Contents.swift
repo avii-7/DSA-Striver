@@ -47,11 +47,24 @@ let testCases3 = [
 //    expectedOutputs: [5, 44, 34],
 //    for: smallestDivisor2)
 
+//execute(
+//    inputs: [
+//        ([1,2,3,4,5,6,7,8,9,10], 5),
+//        ([3,2,2,4,1,4], 3),
+//        ([1,2,3,1,1], 4)
+//    ],
+//    expectedOutputs: [15, 6, 3],
+//    for: shipWithinDays1)
+
+// MARK: - 1539. Kth Missing Positive Number
+
+
 execute(
     inputs: [
-        ([1,2,3,4,5,6,7,8,9,10], 5),
-        ([3,2,2,4,1,4], 3),
-        ([1,2,3,1,1], 4)
+        ([2,3,4,7,11], 5),
+        ([1,2,3,4], 2),
+        ([1, 2, 4, 9, 12], 3),
+        ([5,6,7,8,9], 9)
     ],
-    expectedOutputs: [15, 6, 3],
-    for: shipWithinDays1)
+    expectedOutputs: [9, 6, 6, 14],
+    for: findKthPositiveOptimal)
