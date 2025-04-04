@@ -50,3 +50,34 @@ public func findSmallAndMax(arr: [Int]) -> (small: Int, max: Int) {
 public func calculateSum(_ arr: [Int]) -> Int {
     arr.reduce(0, +)
 }
+
+public func findMinAndSum(arr: [Int]) -> (min: Int, sum: Int) {
+    var sum = 0
+    var min = Int.max
+    
+    for ele in arr {
+        sum += ele
+        
+        if ele < min {
+            min = ele
+        }
+    }
+    
+    return (min, sum)
+}
+
+
+public func findMaxAndSum(arr: [Int]) -> (min: Int, sum: Int) {
+    var sum = 0
+    var maxi = Int.min
+    
+    for ele in arr {
+        sum += ele
+        
+        if ele > maxi {
+            maxi = ele
+        }
+    }
+    
+    return (maxi, sum)
+}

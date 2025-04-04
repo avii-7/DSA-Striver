@@ -58,13 +58,34 @@ let testCases3 = [
 
 // MARK: - 1539. Kth Missing Positive Number
 
+//execute(
+//    inputs: [
+//        ([2,3,4,7,11], 5),
+//        ([1,2,3,4], 2),
+//        ([1, 2, 4, 9, 12], 3),
+//        ([5,6,7,8,9], 9)
+//    ],
+//    expectedOutputs: [9, 6, 6, 14],
+//    for: findKthPositiveOptimal)
+
+// MARK: - Aggressive Cows
+
+//execute(
+//    inputs: [
+//        ([1, 2, 3], 2),
+//        ([0, 3, 4, 7, 10, 9], 4),
+//        ([4, 2, 1, 3, 6], 2),
+//        ([0, 3, 4, 7, 10], 3)
+//    ],
+//    expectedOutputs: [2, 3, 5, 4],
+//    for: aggressiveCows1)
+
+// MARK: - Allocate Books
 
 execute(
     inputs: [
-        ([2,3,4,7,11], 5),
-        ([1,2,3,4], 2),
-        ([1, 2, 4, 9, 12], 3),
-        ([5,6,7,8,9], 9)
+        ([12, 34, 67, 90], 4, 2),
+        ([25, 46, 28, 49, 24], 5, 4),
+        ([10, 20, 30, 40, 500], 5, 4)
     ],
-    expectedOutputs: [9, 6, 6, 14],
-    for: findKthPositiveOptimal)
+    expectedOutputs: [113, 71, 500], for: findPages)
