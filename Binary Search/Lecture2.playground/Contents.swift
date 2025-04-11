@@ -82,10 +82,20 @@ let testCases3 = [
 
 // MARK: - Allocate Books
 
+//execute(
+//    inputs: [
+//        ([12, 34, 67, 90], 4, 2),
+//        ([25, 46, 28, 49, 24], 5, 4),
+//        ([10, 20, 30, 40, 500], 5, 4)
+//    ],
+//    expectedOutputs: [113, 71, 500], for: findPages)
+
+// MARK: - Split Array Largest Sum
+
 execute(
     inputs: [
-        ([12, 34, 67, 90], 4, 2),
-        ([25, 46, 28, 49, 24], 5, 4),
-        ([10, 20, 30, 40, 500], 5, 4)
+        ([7,2,5,10,8], 2),
+        ([1,2,3,4,5], 2),
+        ([2,3,1,1,1,1,1], 5)
     ],
-    expectedOutputs: [113, 71, 500], for: findPages)
+    expectedOutputs: [18, 9, 3], for: splitArray1)

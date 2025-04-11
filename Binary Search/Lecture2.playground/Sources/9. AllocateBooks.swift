@@ -21,6 +21,7 @@ assign books:   25, 46, 28, 49, 24    -> Max
  
  And the minimum amoung them is 71.
  
+ And if we carefully think, answer will always be <= max(arr)
  */
 
 private func getStudents(targetpages: Int, from booksPages: [Int]) -> Int {
