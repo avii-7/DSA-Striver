@@ -92,10 +92,20 @@ let testCases3 = [
 
 // MARK: - Split Array Largest Sum
 
+//execute(
+//    inputs: [
+//        ([7,2,5,10,8], 2),
+//        ([1,2,3,4,5], 2),
+//        ([2,3,1,1,1,1,1], 5)
+//    ],
+//    expectedOutputs: [18, 9, 3], for: splitArray1)
+
+
+// MARK: - Minimize Max Distance to Gas Station
+
 execute(
     inputs: [
-        ([7,2,5,10,8], 2),
-        ([1,2,3,4,5], 2),
-        ([2,3,1,1,1,1,1], 5)
+        ([1,2,3,4], 3),
+        ([1, 7], 2)
     ],
-    expectedOutputs: [18, 9, 3], for: splitArray1)
+    expectedOutputs: [0.5, 2], for: minimiseMaxDistance2)
