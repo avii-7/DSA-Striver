@@ -114,9 +114,18 @@ public func minimiseMaxDistance(_ arr: [Int], _ k: Int) -> Double {
  */
 
 public func minimiseMaxDistance2(_ arr: [Int], _ k: Int) -> Double {
-    var low = 0.0, high = Double(arr.last! - arr.first!)
     
-    while high - low > Double(1e-6) {
+    var maxDiff = 0
+    
+    for i in 0...arr.count - 2 {
+        if arr[i + 1] - arr[i] > maxDiff {
+            maxDiff = arr[i + 1] - arr[i]
+        }
+    }
+    
+    var low = 0.0, high = Double(maxDiff)
+    
+    while high - low > 1e-6 {
         let mid: Double = (low + high) / 2.0
         
         let st = getStations(dist: mid, arr: arr)
@@ -136,10 +145,16 @@ private func getStations(dist: Double, arr: [Int]) -> Int {
     var st = 0
     
     for i in 0...(arr.count - 2) {
-        let diff = (arr[i+1] - arr[i])
-        var tempSt: Double = Double(diff) / (dist + 1)
-        (tempSt.round(.up))
-        st += Int(tempSt)
+        let diff = arr[i + 1] - arr[i]
+        var newGasStationsInBetween = Double(diff) / dist
+        
+        // 1 / 0.4 = 2.5
+        // When excatly divide take -1 => 1 / 0.5 = 2 ==> 1
+        if (arr[i + 1] - arr[i] ) == Int((dist * newGasStationsInBetween)) {
+            newGasStationsInBetween -= 1
+        }
+
+        st += Int(newGasStationsInBetween)
     }
     
     return st
