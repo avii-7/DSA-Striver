@@ -103,9 +103,18 @@ let testCases3 = [
 
 // MARK: - Minimize Max Distance to Gas Station
 
+//execute(
+//    inputs: [
+//        ([1,2,3,4], 3),
+//        ([1, 7], 2)
+//    ],
+//    expectedOutputs: [0.5, 2], for: minimiseMaxDistance2)
+
+// MARK: - Median of Two Sorted Array
+
 execute(
     inputs: [
-        ([1,2,3,4], 3),
-        ([1, 7], 2)
+        ([2, 4, 6], [1, 3, 5]),
+        ([2, 4, 6], [1, 3])
     ],
-    expectedOutputs: [0.5, 2], for: minimiseMaxDistance2)
+    expectedOutputs: [3.5, 3], for: findMedianSortedArrays2)

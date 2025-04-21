@@ -126,9 +126,10 @@ public func minimiseMaxDistance2(_ arr: [Int], _ k: Int) -> Double {
     var low = 0.0, high = Double(maxDiff)
     
     while high - low > 1e-6 {
-        let mid: Double = (low + high) / 2.0
+        let mid = (low + high) / 2.0
         
         let st = getStations(dist: mid, arr: arr)
+        print("Distance: \(mid), st: \(st) low: \(low) high: \(high)")
 
         if st <= k {
             high = mid
@@ -150,7 +151,7 @@ private func getStations(dist: Double, arr: [Int]) -> Int {
         
         // 1 / 0.4 = 2.5
         // When excatly divide take -1 => 1 / 0.5 = 2 ==> 1
-        if (arr[i + 1] - arr[i] ) == Int((dist * newGasStationsInBetween)) {
+        if Double(arr[i + 1] - arr[i]) == (dist * newGasStationsInBetween) {
             newGasStationsInBetween -= 1
         }
 
