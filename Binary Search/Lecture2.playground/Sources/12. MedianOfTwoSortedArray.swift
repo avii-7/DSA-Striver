@@ -5,6 +5,8 @@
 //  Created by Arun on 15/04/25.
 //
 
+// Problem: https://leetcode.com/problems/median-of-two-sorted-arrays/
+
 // TC -> O(n + m)
 // SC -> O(n + m)
 public func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
@@ -131,5 +133,64 @@ public func findMedianSortedArrays2(_ nums1: [Int], _ nums2: [Int]) -> Double {
     }
     else {
         return Double(ele1!)
+    }
+}
+
+// TC: O(log(min(n,m))
+// SC -> O(n + m)
+public func findMedianSortedArrays3(_ nums1: [Int], _ nums2: [Int]) -> Double {
+    
+    let arr1: [Int]
+    let arr2: [Int]
+    
+    if nums1.count < nums2.count {
+        arr1 = nums1
+        arr2 = nums2
+    }
+    else {
+        arr1 = nums2
+        arr2 = nums1
+    }
+    
+    let n1 = arr1.count
+    let n2 = arr2.count
+    let isEven = (n1 + n2) % 2 == 0
+    
+    let division = (n1 + n2 + 1) / 2
+    
+    var low = 0, high = min(n1, n2)
+    
+    while low <= high {
+        let mid1 = (low + high) / 2
+        let mid2 = division - mid1
+        
+        // Check for valid symmetry
+        
+        let l1 = mid1 - 1 > -1 ? arr1[mid1 - 1] : Int.min
+        let l2 = mid2 - 1 > -1 ? arr2[mid2 - 1] : Int.min
+        
+        let r1 = mid1 < n1 ? arr1[mid1] : Int.max
+        let r2 = mid2 < n2 ? arr2[mid2] : Int.max
+        
+        if l1 <= r2 && l2 <= r1 {
+            return getMedian(l1: l1, l2: l2, r1: r1, r2: r2, isEven: isEven)
+        }
+        else if l1 > r2 {
+            high = mid1 - 1
+        }
+        else { // l2 > r1
+            low = mid1 + 1
+        }
+    }
+    
+    return 0.0
+    
+    func getMedian(l1: Int, l2: Int, r1: Int, r2: Int, isEven: Bool) -> Double {
+        
+        if isEven {
+            return (max(Double(l1), Double(l2)) + min(Double(r1), Double(r2))) / 2.0
+        } else {
+            return max(Double(l1), Double(l2))
+        }
     }
 }
