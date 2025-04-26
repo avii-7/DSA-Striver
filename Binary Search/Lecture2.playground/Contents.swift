@@ -112,9 +112,41 @@ let testCases3 = [
 
 // MARK: - Median of Two Sorted Array
 
+//execute(
+//    inputs: [
+//        ([2, 4, 6], [1, 3, 5]),
+//        ([2, 4, 6], [1, 3])
+//    ],
+//    expectedOutputs: [3.5, 3], for: findMedianSortedArrays3)
+
+// MARK: - K-th element of Two Sorted Array
+
+//execute(
+//    inputs: [
+//        ([2, 3, 45], [4, 6, 7, 8], 4),
+//        ([2, 3, 6, 7, 9], [1, 4, 8, 10], 4),
+//        ([1, 2, 3, 5, 6], [4, 7, 8, 9, 100], 6)
+//    ],
+//    expectedOutputs: [6, 4, 6], for: kthElement2)
+
+let arr1 = [1, 2, 3, 5, 6]
+let arr2 = [4, 7, 8, 9, 100]
+let inputs = Array(1...(arr1.count + arr2.count)).map { i in
+    ([1, 2, 3, 5, 6], [4, 7, 8, 9, 100], i)
+}
+
+var mergedArray = arr1 + arr2
+mergedArray.sort()
+
+let outputs = mergedArray
+
 execute(
-    inputs: [
-        ([2, 4, 6], [1, 3, 5]),
-        ([2, 4, 6], [1, 3])
-    ],
-    expectedOutputs: [3.5, 3], for: findMedianSortedArrays2)
+    inputs: inputs,
+    expectedOutputs: outputs, for: kthElement2)
+
+execute(
+    inputs: [([76, 94, 100], [5, 5, 9, 11, 31, 36, 68, 71, 75, 100], 12)],
+    expectedOutputs: [100], for: kthElement2)
+
+
+let abc = [76, 94, 100] + [5, 5, 9, 11, 31, 36, 68, 71, 75, 100]

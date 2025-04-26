@@ -138,6 +138,19 @@ public func findMedianSortedArrays2(_ nums1: [Int], _ nums2: [Int]) -> Double {
 
 // TC: O(log(min(n,m))
 // SC -> O(n + m)
+
+/*
+ Why I'm using `min(n1, n2)` as high and swapping when arr1.count > arr2.count ?
+ Because if we are at the lower index of arr1 such as 0, 1, 2 then mid2 will be higher which might be out of index for arr2.
+ 
+ For example:
+ [1, 2, 3, 4, 9, 11] ->  (Count = 6)
+ [7]
+ 
+ Here, targetDivision is 4 (according to formula) and mid1 is 2 (low = 0, high = 5)
+ and mid2 will be targetDivsion - mid1 = 2 and 2 index doesn't exists in arr2.
+ So that's why we need to take arr1 as the minimum array so that index out of bounds doesn't occur.
+ */
 public func findMedianSortedArrays3(_ nums1: [Int], _ nums2: [Int]) -> Double {
     
     let arr1: [Int]
@@ -161,6 +174,7 @@ public func findMedianSortedArrays3(_ nums1: [Int], _ nums2: [Int]) -> Double {
     var low = 0, high = min(n1, n2)
     
     while low <= high {
+        // Here mid1 respresents number of elements I will take from arr1
         let mid1 = (low + high) / 2
         let mid2 = division - mid1
         
