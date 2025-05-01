@@ -57,15 +57,19 @@ private func isExistsByBS(_ arr: [Int], _ target: Int) -> Bool {
 }
 
 // Better
-// TC: - O(m * log(n))
+// TC: - O(m) + log(n)
 public func searchMatrix1(_ matrix: [[Int]], _ target: Int) -> Bool {
+    
+    let m = matrix.count, n = matrix[0].count
+    
+    if target < matrix[0][0] || target > matrix[m - 1][n - 1] {
+        return false
+    }
     
     for row in matrix {
         
-        let result = isExistsByBS(row, target)
-        
-        if result {
-            return true
+        if target >= row.first! && target <= row.last! {
+            return isExistsByBS(row, target)
         }
     }
     
