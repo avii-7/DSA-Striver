@@ -50,5 +50,5 @@ import Foundation
 execute(
     inputs: [[[1,4],[3,2]]],
     expectedOutputs: [[0, 1]],
-    for: findPeakGrid1
+    for: findPeakGrid2
 )

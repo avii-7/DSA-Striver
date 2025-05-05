@@ -30,6 +30,19 @@ public func findMax(arr: [Int]) -> Int {
     return maxi
 }
 
+public func findMaxIndex(_ arr: [Int]) -> Int {
+    
+    var maxElementIndex = 0
+    
+    for index in arr.indices {
+        if arr[index] > arr[maxElementIndex] {
+            maxElementIndex = index
+        }
+    }
+    
+    return maxElementIndex
+}
+
 public func findSmallAndMax(arr: [Int]) -> (small: Int, max: Int) {
     
     var small = Int.max

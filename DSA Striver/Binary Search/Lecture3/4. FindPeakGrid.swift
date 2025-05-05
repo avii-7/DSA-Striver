@@ -33,7 +33,7 @@ func findPeakGrid(_ mat: [[Int]]) -> [Int] {
     return []
 }
 
-// My Weird solution: Just follow larger element.
+// My Weird solution (Greedy): Just follow larger element.
 // TC: - O(m * n)
 func findPeakGrid1(_ mat: [[Int]]) -> [Int] {
     
@@ -70,3 +70,50 @@ func findPeakGrid1(_ mat: [[Int]]) -> [Int] {
     
     return []
 }
+
+// TC -> Log(m) * n
+// Here I'm applying BS on rows but you can also apply it on coloumns then TC will m * Log(n)
+func findPeakGrid2(_ mat: [[Int]]) -> [Int] {
+    
+    let m = mat.count
+    
+    var low = 0, high = m - 1
+    
+    while low <= high {
+        
+        let mid = (low + high) / 2
+        
+        let maxIndex = findMaxIndex(mat[mid])
+        
+        // Is it also greater than top and bottom ? ( I'm using 'also' keyword here because that element is the maximum in their entire row)
+        let topElement = mid - 1 >= 0 ? mat[mid - 1][maxIndex] : -1
+        let bottomElement = mid + 1 < m ? mat[mid + 1][maxIndex] : -1
+        
+        if mat[mid][maxIndex] > topElement, mat[mid][maxIndex] > bottomElement {
+            return [mid, maxIndex]
+        }
+        else if mat[mid][maxIndex] < topElement {
+            high = mid - 1
+        }
+        else {
+            low = mid + 1
+        }
+    }
+    
+    return []
+    
+    func findMaxIndex(_ arr: [Int]) -> Int {
+        
+        var maxElementIndex = 0
+        
+        for index in arr.indices {
+            if arr[index] > arr[maxElementIndex] {
+                maxElementIndex = index
+            }
+        }
+        
+        return maxElementIndex
+    }
+}
+
+
