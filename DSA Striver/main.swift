@@ -47,8 +47,29 @@ import Foundation
 //)
 
 // Problem: 1901. Find a Peak Element II
+//execute(
+//    inputs: [[[1,4],[3,2]]],
+//    expectedOutputs: [[0, 1]],
+//    for: findPeakGrid2
+//)
+
+// Median in a row-wise sorted Matrix
 execute(
-    inputs: [[[1,4],[3,2]]],
-    expectedOutputs: [[0, 1]],
-    for: findPeakGrid2
+    inputs: [
+        [     [ 1, 5, 7, 9, 11 ],
+              [ 2, 3, 4, 8, 9 ],
+              [ 4, 11, 14, 19, 20 ],
+              [ 6, 10, 22, 99, 100 ],
+              [ 7, 15, 17, 24, 28 ]
+        ],
+        
+        [
+            [1, 2, 3, 4, 5],
+            [8, 9, 11, 12, 13],
+            [21, 23, 25, 27, 29]
+        ]
+        
+    ],
+    expectedOutputs: [10, 11],
+    for: findMedian
 )
