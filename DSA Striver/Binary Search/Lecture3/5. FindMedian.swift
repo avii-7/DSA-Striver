@@ -39,7 +39,6 @@
  Total TC -> O(14n) => O( ((m * (m + 1)) / 2) - 1 * n)
  */
 func findMedian(matrix: [[Int]]) -> Int {
-    let m = matrix.count, n = matrix.first!.count
     
     var temp = matrix.first!
     
@@ -78,4 +77,74 @@ func findMedian(matrix: [[Int]]) -> Int {
     }
     
     return temp[temp.count / 2]
+}
+
+
+// TC: - log(10`9) * m * log(n)
+
+func findMedian2(matrix: [[Int]]) -> Int {
+    
+    let m = matrix.count, n = matrix.first!.count
+    let target = (m * n) / 2
+    
+    // Determine search space
+    // constraints: 1 <= mat[i][j] <=10^9
+    var low = Int.max, high = Int.min
+
+    for i in matrix.indices {
+        if matrix[i][0] < low {
+            low = matrix[i][0]
+        }
+        
+        if matrix[i][n - 1] > high {
+            high = matrix[i][n-1]
+        }
+    }
+    
+    while low <= high {
+        let mid = (low + high) / 2
+        
+        let smallerEquals = getSmallerEquals(matrix, mid)
+        
+        if smallerEquals <= target {
+            low = mid + 1
+        }
+        else {
+            high = mid - 1
+        }
+    }
+    
+    return low
+}
+
+func getSmallerEquals(_ mat: [[Int]], _ number: Int) -> Int {
+    
+    var count = 0
+    
+    for rowIndex in mat.indices {
+        let result = upperBound(mat[rowIndex], number)
+        
+        count += result
+    }
+    
+    return count
+}
+
+func upperBound(_ arr: [Int], _ number: Int) -> Int{
+    
+    var low = 0, high = arr.count - 1
+    
+    while low <= high {
+        
+        let mid = (low + high) / 2
+        
+        if arr[mid] <= number {
+            low = mid + 1
+        }
+        else {
+            high = mid - 1
+        }
+    }
+    
+    return low
 }

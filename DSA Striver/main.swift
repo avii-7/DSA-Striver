@@ -71,5 +71,5 @@ execute(
         
     ],
     expectedOutputs: [10, 11],
-    for: findMedian
+    for: findMedian2
 )
