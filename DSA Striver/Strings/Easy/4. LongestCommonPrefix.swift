@@ -8,7 +8,7 @@
 // LC: https://leetcode.com/problems/longest-common-prefix
 
 // TC -> O(min(strs) * n)
-// SC -> O(1)
+// SC -> O(str.first!.count)
 
 func longestCommonPrefix(_ strs: [String]) -> String {
     
@@ -22,7 +22,8 @@ func longestCommonPrefix(_ strs: [String]) -> String {
     
     var endIndex: String.Index? = nil
     
-    outerLoop: for index in temp.indices {
+    outerLoop:
+    for index in temp.indices {
         for str in strs {
 
             if str.isEmpty {
