@@ -43,5 +43,3 @@ func longestCommonPrefix(_ strs: [String]) -> String {
     
     return ""
 }
-
-

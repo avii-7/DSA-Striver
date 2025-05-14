@@ -75,13 +75,26 @@ import Foundation
 //)
 
 // 14. Longest Common Prefix
+//execute(
+//    inputs: [
+//        ["flower","flow","flight"],
+//        ["dog","racecar","car"],
+//        ["a"],
+//        ["a","b"]
+//    ],
+//    expectedOutputs: ["fl", "", "a", ""],
+//    for: longestCommonPrefix
+//)
+
+// 205. Isomorphic Strings
 execute(
     inputs: [
-        ["flower","flow","flight"],
-        ["dog","racecar","car"],
-        ["a"],
-        ["a","b"]
+        ("egg", "add"),
+        ("foo", "bar"),
+        ("bar", "foo"),
+        ("paper", "title"),
+        ("bbbaaaba", "aaabbbba")
     ],
-    expectedOutputs: ["fl", "", "a", ""],
-    for: longestCommonPrefix
+    expectedOutputs: [true, false, false, true, false],
+    for: isIsomorphic
 )
