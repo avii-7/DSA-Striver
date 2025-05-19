@@ -87,14 +87,25 @@ import Foundation
 //)
 
 // 205. Isomorphic Strings
+//execute(
+//    inputs: [
+//        ("egg", "add"),
+//        ("foo", "bar"),
+//        ("bar", "foo"),
+//        ("paper", "title"),
+//        ("bbbaaaba", "aaabbbba")
+//    ],
+//    expectedOutputs: [true, false, false, true, false],
+//    for: isIsomorphic
+//)
+
+// 796. Rotate String
 execute(
     inputs: [
-        ("egg", "add"),
-        ("foo", "bar"),
-        ("bar", "foo"),
-        ("paper", "title"),
-        ("bbbaaaba", "aaabbbba")
+        ("abcde", "cdeab"),
+        ("abcde", "abced"),
+        ("joe", "oej")
     ],
-    expectedOutputs: [true, false, false, true, false],
-    for: isIsomorphic
+    expectedOutputs: [true, false, true],
+    for: rotateString1
 )

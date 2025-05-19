@@ -13,8 +13,6 @@
  
  */
 
-import RegexBuilder
-
 /* Intution
  
  We need to create 2 mapping s -> t and t -> s.
