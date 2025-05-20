@@ -62,13 +62,13 @@ import Foundation
 //              [ 6, 10, 22, 99, 100 ],
 //              [ 7, 15, 17, 24, 28 ]
 //        ],
-//        
+//
 //        [
 //            [1, 2, 3, 4, 5],
 //            [8, 9, 11, 12, 13],
 //            [21, 23, 25, 27, 29]
 //        ]
-//        
+//
 //    ],
 //    expectedOutputs: [10, 11],
 //    for: findMedian2
@@ -107,5 +107,30 @@ execute(
         ("joe", "oej")
     ],
     expectedOutputs: [true, false, true],
-    for: rotateString1
+    for: rotateString2
 )
+
+//execute(
+//    inputs: [
+//        ("aaaaaaab", "aab"),
+//        ("abcdefghijkl", "ttr"),
+//        ("qwertuvwxyz", "uvwxyq"),
+//        ("XT", "AERTAET")
+//    ],
+//    expectedOutputs: [true, false, false, false],
+//    for: containsNaive
+//)
+
+//execute(
+//    inputs: [
+//        "ababd",
+//        "aaaaaab",
+//        "abzxtabzq"
+//    ],
+//    expectedOutputs: [
+//        [0, 0, 1, 2, 0],
+//        [0, 1, 2, 3, 4, 5, 0],
+//        [0, 0, 0, 0, 0, 1, 2, 3, 0]
+//    ],
+//    for: createLPSArray
+//)
