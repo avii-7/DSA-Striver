@@ -100,15 +100,15 @@ import Foundation
 //)
 
 // 796. Rotate String
-execute(
-    inputs: [
-        ("abcde", "cdeab"),
-        ("abcde", "abced"),
-        ("joe", "oej")
-    ],
-    expectedOutputs: [true, false, true],
-    for: rotateString2
-)
+//execute(
+//    inputs: [
+//        ("abcde", "cdeab"),
+//        ("abcde", "abced"),
+//        ("joe", "oej")
+//    ],
+//    expectedOutputs: [true, false, true],
+//    for: rotateString2
+//)
 
 //execute(
 //    inputs: [
@@ -134,3 +134,16 @@ execute(
 //    ],
 //    for: createLPSArray
 //)
+
+// 242. Valid Anagram
+execute(
+    inputs: [
+        ("anagram", "nagaram"),
+        ("rat", "car"),
+        ("joe", "oej"),
+        ("caat", "catt"),
+        ("caat", "tppc")
+    ],
+    expectedOutputs: [true, false, true, false, false],
+    for: isAnagram1
+)
